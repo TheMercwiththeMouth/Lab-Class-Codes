@@ -1,0 +1,65 @@
+//Create and use a new database--
+use 106121077_Lab7
+================================================================================================================================
+//QUESTION 1: Work with Create, Read, Update and Delete Operations in MongoDB
+
+//Create a new collection (table) --
+db.createCollection('Customers').pretty();
+
+//Insert new documents (records).pretty() into the collection
+db.Customers.insertOne({Name: "Mercia Melvin", Age: 21, OrderID: 101, Type: "Pencils",  Places: ["Bangalore", "Chennai", "Mumbai"]}).pretty()
+db.Customers.insertMany([{Name: "Nishith Eedula", Age: 22, OrderID: 104, Type: "Pens", Places: ["Gurgaon", "Mumbai"]}, {Name: "Rithvik Ravilla", Age: 20, OrderID: 102, Type: "Erasers", Places: ["Bangalore","Delhi", "Mumbai"]}, {Name: "Aditya Singh", Age: 21, OrderID: 107, Type: "Pens", Places: ["Bahrain", "Gurgaon", "Mumbai"]}]).pretty()
+db.Customers.insertMany([{Name: "Elizabeth Jees Tharayile", Age: 22, OrderID: 105, Type: "Pens", Places: ["Bangalore", "Chennai"]}, {Name: "Arati Mohapatra", Age: 21, OrderID: 103, Type: "Pencils", Places: ["Chennai", "Mumbai"]}, {Name: "Kavimalar Subbaiah", Age: 21, OrderID: 106, Type: "Scales", Places: ["Bangalore", "Delhi", "Mumbai"]}]).pretty()
+db.Customers.insertMany([{Name: "Haritha Muthukumar", Age: 22, OrderID: 108, Type: "Brushes", Places: ["Bangalore", "Chennai", "Bahrain"]}, {Name: "Srivijayaraghav Srinivasan", Age: 19, OrderID: 109, Type: "Whitener Tape", Places: ["Chennai", "Hyderabad"]}, {Name: "Kevin Christ", Age: 20, OrderID: 110, Type: "Brushes",Places: ["Bangalore", "Chennai", "Hyderabad"]}]).pretty()
+//To view the database i.e. SELECT * command equivalent
+db.Customers.find().pretty()
+
+//To view select documents based on query provided
+db.Customers.find({Type: "Pens"}).pretty()
+
+//To update documents based on query provided
+db.Customers.update({Type: "Pens"}, {$set: {Type: "Scales"}}).pretty()
+
+//To delete documents based on query provided
+db.Customers.deleteOne({Type: "Pencils"}).pretty()
+====================================================================================================================================
+
+//QUESTION 2: Explore Intermediate Mongo Queries using 
+
+
+//a. Comparison Operators
+db.Customers.find({Age: {$gte: 20}}).pretty()
+db.Customers.find({Age: {$lt: 20}}).pretty()
+
+//b. Logical Operators
+db.Customers.find({$and: [{Age: {$gt: 20}},{OrderID: {$lt: 105}}]}).pretty()
+db.Customers.find({$or: [{Age: {$gt: 20}},{OrderID: {$lt: 105}}]}).pretty()
+db.Customers.find({$nor: [{Age: {$gt: 20}},{OrderID: {$lt: 105}}]}).pretty()
+db.Customers.find({Age: {$not: {$gt: 20}}}).pretty()
+
+//c. Element Operators
+//exists
+db.Customers.find( {Name: { $exists: true } } ).pretty()
+//type
+db.Customers.find( { Age : { $type : "double" } } ).pretty();
+
+//d. Array Operators
+//a. $all
+db.Customers.find ({ Places: { $all: [ "Bangalore" , "Chennai" ] } }).pretty()
+//b. elemMatch
+db.Customers.find ({Places: { $elemMatch: { $gt: "Bangalore", $lt: "Mumbai"} }}).pretty()
+//c. size
+db.Customers.find( {Places: { $size: 2 } } ).pretty();
+
+//NOTE: AFTER YOUR QUERY ADD .pretty() TO GET YOUR ANSWER BETTER FORMATTED
+==================================================================================================================================================
+
+//QUESTION 3: Explore Advanced Mongo Queries using
+//a. $group operator
+db.Customers.aggregate( [ { $group : { _id : "$Type" } } ] )
+
+//b. $match operator
+db.Customers.aggregate( [ { $match : { Type : "Pencils" } } ] )
+
+//c. $sort operator
+db.Customers.aggregate([{$sort: {OrderID: 1, Name: 1}}]).pretty()
