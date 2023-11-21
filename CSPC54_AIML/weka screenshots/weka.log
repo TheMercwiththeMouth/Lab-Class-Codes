@@ -1,0 +1,48 @@
+2023-11-21 15:02:19 weka.gui.GUIChooser main
+INFO: Logging started
+---Registering Weka Editors---
+Trying to add database driver (JDBC): jdbc.idbDriver - Error, not in CLASSPATH?
+2023-11-21 15:02:25 weka.gui.explorer.Explorer <init>
+INFO: Weka Explorer
+2023-11-21 15:02:25 weka.gui.explorer.Explorer <init>
+INFO: (c) 1999-2015 The University of Waikato, Hamilton, New Zealand
+2023-11-21 15:02:25 weka.gui.explorer.Explorer <init>
+INFO: web: http://www.cs.waikato.ac.nz/~ml/weka/
+2023-11-21 15:02:25 weka.gui.explorer.Explorer <init>
+INFO: Started on Tuesday, 21 November 2023
+2023-11-21 15:03:08 weka.gui.explorer.ClassifierPanel$16 run
+INFO: Started weka.classifiers.functions.SMO
+2023-11-21 15:03:08 weka.gui.explorer.ClassifierPanel$16 run
+INFO: Command:weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -M -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -C 250007 -E 1.0"
+2023-11-21 15:03:08 weka.gui.explorer.ClassifierPanel$16 run
+INFO: Finished weka.classifiers.functions.SMO
+2023-11-21 15:04:37 weka.gui.explorer.ClassifierPanel$16 run
+INFO: Started weka.classifiers.functions.MultilayerPerceptron
+2023-11-21 15:04:37 weka.gui.explorer.ClassifierPanel$16 run
+INFO: Command:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a
+2023-11-21 15:04:37 weka.gui.explorer.ClassifierPanel$16 run
+INFO: Finished weka.classifiers.functions.MultilayerPerceptron
+2023-11-21 15:04:48 weka.gui.explorer.ClassifierPanel$16 run
+INFO: Started weka.classifiers.functions.MultilayerPerceptron
+2023-11-21 15:04:48 weka.gui.explorer.ClassifierPanel$16 run
+INFO: Command:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a -G -R
+2023-11-21 15:07:22 weka.gui.explorer.Explorer <init>
+INFO: Weka Explorer
+2023-11-21 15:07:22 weka.gui.explorer.Explorer <init>
+INFO: (c) 1999-2015 The University of Waikato, Hamilton, New Zealand
+2023-11-21 15:07:22 weka.gui.explorer.Explorer <init>
+INFO: web: http://www.cs.waikato.ac.nz/~ml/weka/
+2023-11-21 15:07:22 weka.gui.explorer.Explorer <init>
+INFO: Started on Tuesday, 21 November 2023
+2023-11-21 15:08:00 weka.gui.explorer.ClustererPanel$12 run
+INFO: Started weka.clusterers.HierarchicalClusterer
+2023-11-21 15:08:00 weka.gui.explorer.ClustererPanel$12 run
+INFO: Command: weka.clusterers.HierarchicalClusterer -N 3 -L SINGLE -P -A "weka.core.EuclideanDistance -R first-last"
+2023-11-21 15:08:01 weka.gui.explorer.ClustererPanel$12 run
+INFO: Finished weka.clusterers.HierarchicalClusterer
+2023-11-21 15:08:29 weka.gui.explorer.ClustererPanel$12 run
+INFO: Started weka.clusterers.SimpleKMeans
+2023-11-21 15:08:29 weka.gui.explorer.ClustererPanel$12 run
+INFO: Command: weka.clusterers.SimpleKMeans -N 3 -A "weka.core.EuclideanDistance -R first-last" -I 500 -S 10
+2023-11-21 15:08:29 weka.gui.explorer.ClustererPanel$12 run
+INFO: Finished weka.clusterers.SimpleKMeans
